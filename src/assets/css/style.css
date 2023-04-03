@@ -18,3 +18,18 @@ body{
     /* background-color: pink; */
     padding: 15px;
 }
+.outer{
+    overflow: scroll;
+    width: 100%;
+}
+
+.marketplace{
+    width: 1000px;
+}
+.card-product{
+    margin-left: 10px;
+    border-radius: 10px;
+    background-color: pink;
+    padding: 8px;
+    width: 150px;
+}

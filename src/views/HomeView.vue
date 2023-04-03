@@ -24,6 +24,25 @@
     <div class="mt-5">
       <h6 class="text-start fw-bold">Marketplace</h6>
     </div>
+    <div class="outer">
+      <div class="row marketplace mt-3">
+        <div class="card-product text-start">
+          <img src="" alt="">
+          <p class="fw-bold">Vgen Handsfree</p>
+          <p>Handsfree dengan kualitas terbaik</p>
+        </div>
+        <div class="card-product text-start">
+          <img src="" alt="">
+          <p class="fw-bold">Vgen Handsfree</p>
+          <p>Handsfree dengan kualitas terbaik</p>
+        </div>
+        <div class="card-product text-start">
+          <img src="" alt="">
+          <p class="fw-bold">Vgen Handsfree</p>
+          <p>Handsfree dengan kualitas terbaik</p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
