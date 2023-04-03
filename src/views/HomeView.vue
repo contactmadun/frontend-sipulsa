@@ -1,18 +1,36 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <div class="row">
+      <div class="col-5">
+        <h4 class="text-start mt-4 mb-4">Maulana Rizki Ilhami</h4>
+      </div>
+    </div>
+    <div class="buy-credit-provider shadow p-3 mb-5 bg-body">
+      <h6 class="text-start">Saldo</h6>
+      <h6 class="text-start fw-bold">Rp.0</h6>
+      <hr>
+      <form>
+        <div class="mb-3">
+          <input type="number" class="form-control" id="inputNumber" placeholder="No Tujuan">
+        </div>
+        <div class="mb-3">
+          <input type="number" class="form-control" id="inputNominal" placeholder="Nominal">
+        </div>
+        <div class="d-grid gap-2 mt-4">
+          <button type="submit" class="btn btn-primary" disabled>Isi Pulsa</button>
+        </div>
+      </form>
+    </div>
+    <div class="mt-5">
+      <h6 class="text-start fw-bold">Marketplace</h6>
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld
-  }
+  name: "HomeView",
 }
 </script>
+
+<style></style>

@@ -10,3 +10,11 @@ body{
 }
 
 /* Fontstyle */
+
+
+/* Home Section */
+.buy-credit-provider{
+    border-radius: 20px;
+    /* background-color: pink; */
+    padding: 15px;
+}
