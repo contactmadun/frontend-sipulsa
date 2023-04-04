@@ -4,6 +4,8 @@ import VueRouter from 'vue-router'
 import LoginView from '../views/LoginView.vue'
 import RegisterView from '../views/RegisterView.vue'
 import HomeView from '../views/HomeView.vue'
+import MarketplaceView from '../views/MarketplaceView.vue'
+import DetailProductView from '../views/DetailProductView.vue'
 
 Vue.use(VueRouter)
 
@@ -17,6 +19,16 @@ const routes = [
     path: '/home',
     name: 'home',
     component: HomeView
+  },
+  {
+    path: '/marketplace',
+    name: 'marketplace',
+    component: MarketplaceView
+  },
+  {
+    path: '/detail',
+    name: 'detailproduct',
+    component: DetailProductView
   },
   {
     path: '/register',

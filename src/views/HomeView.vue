@@ -22,7 +22,14 @@
       </form>
     </div>
     <div class="mt-5">
-      <h6 class="text-start fw-bold">Marketplace</h6>
+      <div class="row">
+        <div class="col-6">
+          <h6 class="text-start fw-bold">Marketplace</h6>
+        </div>
+        <div class="col-6">
+          <router-link to="/marketplace"><p class="text-end">Lihat Semua</p></router-link>
+        </div>
+      </div>
     </div>
     <div class="outer">
       <div class="row marketplace mt-3 mb-5">
@@ -37,6 +44,27 @@
           <img src="../assets/img/img_hf_vgen2.jpg" class="card-img" alt="">
           <div class="container mt-3">
             <p class="fw-bold text-truncate">Vgen Handsfree Full Bass Sound</p>
+            <p style="margin-top: -10px">Rp. 22.000</p>
+          </div>
+        </div>
+        <div class="card-product shadow text-start">
+          <img src="../assets/img/img_hf_vgen.jpeg" class="card-img" alt="">
+          <div class="container mt-3">
+            <p class="fw-bold">Vgen Handsfree</p>
+            <p style="margin-top: -10px">Rp. 22.000</p>
+          </div>
+        </div>
+        <div class="card-product shadow text-start">
+          <img src="../assets/img/img_hf_vgen2.jpg" class="card-img" alt="">
+          <div class="container mt-3">
+            <p class="fw-bold text-truncate">Vgen Handsfree Full Bass Sound</p>
+            <p style="margin-top: -10px">Rp. 22.000</p>
+          </div>
+        </div>
+        <div class="card-product shadow text-start">
+          <img src="../assets/img/img_hf_vgen.jpeg" class="card-img" alt="">
+          <div class="container mt-3">
+            <p class="fw-bold">Vgen Handsfree</p>
             <p style="margin-top: -10px">Rp. 22.000</p>
           </div>
         </div>

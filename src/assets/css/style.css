@@ -9,6 +9,11 @@ body{
     padding: 0px 20px;
 }
 
+a{
+    text-decoration: none;
+    color: black;
+}
+
 /* Fontstyle */
 
 
@@ -36,4 +41,24 @@ body{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     object-fit: cover;
+}
+
+/* Martketplace */
+.card-product-marketplace{
+    margin-bottom: 10px;
+    margin-right: 7px;
+    padding: 0px;
+    width: 165px;
+    border-radius: 10px;
+}
+.product-detail{
+    z-index: -999;
+    overflow: scroll;
+}
+.nav-bottom-product{
+    z-index: 9999;
+    padding-top: 5px;
+    padding-left: 20px;
+    height: 60px;
+    width: 100%;
 }
