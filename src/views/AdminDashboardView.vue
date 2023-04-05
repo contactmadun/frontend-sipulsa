@@ -4,6 +4,7 @@
         linkBeranda="sidebar-item active"
         linkInformasiPengguna="sidebar-item"
         linkProductMarketplace="sidebar-item"
+        linkCategoryMarketplace="sidebar-item"
         ></SideNavbar>    
     </div>
 </template>

@@ -9,6 +9,9 @@ import DetailProductView from '../views/DetailProductView.vue'
 import AdminDashboardView from '../views/AdminDashboardView.vue'
 import AdminUsersView from '../views/AdminUsersView.vue'
 import AdminMarketplaceView from '../views/AdminMarketplaceView.vue'
+import AdminAddProductView from '../views/AdminAddProductView.vue'
+import AdminEditProductView from '../views/AdminEditProductView.vue'
+import AdminCategoryProductView from '../views/AdminCategoryProductView.vue'
 
 Vue.use(VueRouter)
 
@@ -52,7 +55,23 @@ const routes = [
     path: '/product',
     name: 'adminmarketplace',
     component: AdminMarketplaceView
+  },
+  {
+    path: '/add-product',
+    name: 'adminaddproduct',
+    component: AdminAddProductView
+  },
+  {
+    path: '/edit-product',
+    name: 'adminaeditproduct',
+    component: AdminEditProductView
+  },
+  {
+    path: '/category',
+    name: 'adminacategoryproduct',
+    component: AdminCategoryProductView
   }
+
 ]
 
 const router = new VueRouter({

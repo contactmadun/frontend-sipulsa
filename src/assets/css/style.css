@@ -261,3 +261,19 @@ a{
       line-height: 24px;
     }
   }
+.content-admin{
+  padding-right: 64px;
+  margin-top: 50px;
+  margin-left: 450px;
+}
+.table{
+  background-color: white;
+  border-radius: 20px;
+  width: 100%;
+  padding: 30px;
+}
+.bg-add{
+  width: 100%;
+  border-radius: 15px;
+  padding: 20px;
+}
