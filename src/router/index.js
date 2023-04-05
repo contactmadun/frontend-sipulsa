@@ -6,6 +6,9 @@ import RegisterView from '../views/RegisterView.vue'
 import HomeView from '../views/HomeView.vue'
 import MarketplaceView from '../views/MarketplaceView.vue'
 import DetailProductView from '../views/DetailProductView.vue'
+import AdminDashboardView from '../views/AdminDashboardView.vue'
+import AdminUsersView from '../views/AdminUsersView.vue'
+import AdminMarketplaceView from '../views/AdminMarketplaceView.vue'
 
 Vue.use(VueRouter)
 
@@ -14,6 +17,11 @@ const routes = [
     path: '/',
     name: 'login',
     component: LoginView
+  },
+  {
+    path: '/admin',
+    name: 'admin',
+    component: AdminDashboardView
   },
   {
     path: '/home',
@@ -36,12 +44,14 @@ const routes = [
     component: RegisterView
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path: '/users',
+    name: 'adminusers',
+    component: AdminUsersView
+  },
+  {
+    path: '/product',
+    name: 'adminmarketplace',
+    component: AdminMarketplaceView
   }
 ]
 
