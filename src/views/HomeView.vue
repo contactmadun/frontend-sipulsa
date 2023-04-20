@@ -2,12 +2,12 @@
   <div>
     <div class="row">
       <div class="col-5">
-        <h4 class="text-start mt-4 mb-4">Maulana Rizki Ilhami</h4>
+        <h4 class="text-start mt-4 mb-4">Halo, {{ name }}</h4>
       </div>
     </div>
     <div class="buy-credit-provider shadow p-3 mb-5 bg-body">
       <h6 class="text-start">Saldo</h6>
-      <h6 class="text-start fw-bold">Rp.0</h6>
+      <h6 class="text-start fw-bold">Rp. {{ balance }}</h6>
       <hr>
       <form>
         <div class="mb-3">
@@ -68,19 +68,43 @@
             <p style="margin-top: -10px">Rp. 22.000</p>
           </div>
         </div>
-        <!-- <div class="card-product text-start">
-          <img src="" alt="">
-          <p class="fw-bold">Vgen Handsfree</p>
-          <p>Handsfree dengan kualitas terbaik</p>
-        </div> -->
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import axios from 'axios';
+import jwt_decode from 'jwt-decode';
+
 export default {
   name: "HomeView",
+  data(){
+    return{
+      session: [],
+      name: null,
+      balance: null,
+      token: null
+    }
+  },
+  methods:{
+    async refreshToken(){
+      try {
+          const response = await axios.get('users/token');
+          this.token = (response.data.accessToken);
+          const decode = jwt_decode(response.data.accessToken);
+          console.log(decode.balance);
+          this.name = (decode.name);
+          this.balance = (decode.balance);
+          this.session = decode; 
+      } catch (error) {
+          console.log(error);
+      }
+    }
+  },
+  mounted(){
+    this.refreshToken();
+  }
 }
 </script>
 

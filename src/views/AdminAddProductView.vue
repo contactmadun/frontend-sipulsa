@@ -10,7 +10,7 @@
                     <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
                 </div>
                 <select class="form-select mb-3" aria-label="Default select example">
-                    <option selected>Vgen Data Cable</option>
+                    <option selected>Pilih Kategori Produk</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
