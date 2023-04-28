@@ -33,39 +33,11 @@
     </div>
     <div class="outer">
       <div class="row marketplace mt-3 mb-5">
-        <div class="card-product shadow text-start">
-          <img src="../assets/img/img_hf_vgen.jpeg" class="card-img" alt="">
+        <div class="card-product shadow text-start" v-for="(product, index) in topProduct" :key="index">
+          <img :src="product.image" class="card-img" alt="">
           <div class="container mt-3">
-            <p class="fw-bold">Vgen Handsfree</p>
-            <p style="margin-top: -10px">Rp. 22.000</p>
-          </div>
-        </div>
-        <div class="card-product shadow text-start">
-          <img src="../assets/img/img_hf_vgen2.jpg" class="card-img" alt="">
-          <div class="container mt-3">
-            <p class="fw-bold text-truncate">Vgen Handsfree Full Bass Sound</p>
-            <p style="margin-top: -10px">Rp. 22.000</p>
-          </div>
-        </div>
-        <div class="card-product shadow text-start">
-          <img src="../assets/img/img_hf_vgen.jpeg" class="card-img" alt="">
-          <div class="container mt-3">
-            <p class="fw-bold">Vgen Handsfree</p>
-            <p style="margin-top: -10px">Rp. 22.000</p>
-          </div>
-        </div>
-        <div class="card-product shadow text-start">
-          <img src="../assets/img/img_hf_vgen2.jpg" class="card-img" alt="">
-          <div class="container mt-3">
-            <p class="fw-bold text-truncate">Vgen Handsfree Full Bass Sound</p>
-            <p style="margin-top: -10px">Rp. 22.000</p>
-          </div>
-        </div>
-        <div class="card-product shadow text-start">
-          <img src="../assets/img/img_hf_vgen.jpeg" class="card-img" alt="">
-          <div class="container mt-3">
-            <p class="fw-bold">Vgen Handsfree</p>
-            <p style="margin-top: -10px">Rp. 22.000</p>
+            <p class="fw-bold text-truncate">{{ product.name }}</p>
+            <p style="margin-top: -10px">Rp {{ product.price_2 }}</p>
           </div>
         </div>
       </div>
@@ -81,6 +53,7 @@ export default {
   name: "HomeView",
   data(){
     return{
+      topProduct: [],
       session: [],
       name: null,
       balance: null,
@@ -88,6 +61,15 @@ export default {
     }
   },
   methods:{
+    async getDataProduct(){
+      try {
+          const response = await axios.get('product/limit');
+          this.topProduct = response.data;
+          console.log(this.topProduct);
+      } catch (error) {
+          console.log(error);
+      }
+    },
     async refreshToken(){
       try {
           const response = await axios.get('users/token');
@@ -104,6 +86,7 @@ export default {
   },
   mounted(){
     this.refreshToken();
+    this.getDataProduct();
   }
 }
 </script>

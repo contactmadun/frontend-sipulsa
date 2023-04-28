@@ -27,29 +27,30 @@
                         <p>Aksi</p>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" v-for="(product, index) in products" :key="index">
                     <div class="col-2">
-                        <p class="text-truncate">Vgen Handsfreen Bass Full</p>
+                        <p class="text-truncate">{{ product.name }}</p>
                     </div>
                     <div class="col-2">
-                        <p>Handsfree</p>
+                        <p>{{ product.Category.name }}</p>
                     </div>
                     <div class="col-2">
-                        <p>Vgen</p>
+                        <p>{{ product.Brand.name }}</p>
                     </div>
                     <div class="col-2">
-                        <p>Tersedia</p>
+                        <p class="text-capitalize">{{ product.stok }}</p>
                     </div>
                     <div class="col-2">
-                        <p>Rp 22.000</p>
+                        <p>Rp {{ product.price_2 }}</p>
                     </div>
                     <div class="col-2">
                         <div class="row">
                             <div class="col-6">
-                                <router-link to="/edit-product" class="fw-bold" style="color: green">Edit</router-link>
+                                <button @click.prevent="getSelectedData(product.id)" class="btn btn-success">Edit</button>
                             </div>
                             <div class="col-6">
-                                <router-link to="" class="fw-bold" style="color: red">Hapus</router-link>
+                                <button @click="handleDeleteProduct(product.id)" class="btn btn-danger">Hapus</button>
+                                <!-- <router-link to="" class="fw-bold" style="color: red">Hapus</router-link> -->
                             </div>
                         </div>
                     </div>
@@ -61,11 +62,53 @@
   
 <script>
 import SideNavbar from '@/components/NavSideAdmin.vue'
+import axios from 'axios'
+
 export default {
     name: "AdminMarketplaceView",
     components: {
         SideNavbar
+    },
+    data(){
+        return{
+            products: [],
+            product: null
+        }
+    },
+    methods:{
+        async getDataProducts(){
+            try {
+                const response = await axios.get('product');
+                this.products = response.data;
+            } catch (error) {
+                console.log(error);
+            }
+        },
+        async getSelectedData(id){
+            try {
+                const response = await axios.post(`product/${id}`);
+                this.$store.commit('addDataProduct', response.data);
+                this.$router.push('/edit-product');
+            } catch (error) {
+                console.log(error);
+            }
+        },
+        async handleDeleteProduct(id){
+            try {
+                await axios.delete(`product/${id}`);
+                window.location.reload();
+            } catch (error) {
+                console.log(error);
+            }
+        },
+    },
+    mounted(){
+        this.getDataProducts();
+        if(this.$store.state.dataProduct.length){
+            window.location.reload();
+        }
     }
+
 }
 </script>
   
